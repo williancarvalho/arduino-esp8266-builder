@@ -6,10 +6,6 @@ ENV ARDUINO_VERSION=1.8.4
 ADD artifacts/arduino-${ARDUINO_VERSION}-linux64.tar.xz /opt
 WORKDIR /opt/arduino-${ARDUINO_VERSION}
 
-# install SimpleTimer lib
-RUN cd /opt/arduino-${ARDUINO_VERSION}/libraries && \
-    git clone https://github.com/jfturcot/SimpleTimer.git SimpleTimer
-
 # install Wifi Manager
 RUN cd /opt/arduino-${ARDUINO_VERSION}/libraries && \
     git clone https://github.com/tzapu/WiFiManager.git WiFiManager && \
